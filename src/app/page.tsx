@@ -11,6 +11,7 @@ import {
 import { parseEther } from "viem";
 import { toast } from "sonner";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
+import Tabs from "@/components/Tabs";
 
 export default function Home() {
   const { isConnected } = useAccount();
@@ -51,42 +52,30 @@ export default function Home() {
 
   return (
     <main>
-      <section className="py-12 flex flex-col items-center text-center gap-8">
-        <h1 className="text-4xl font-bold">Web3 Starter Kit</h1>
-        <p className="text-2xl text-muted-foreground">
-          Build your dapp frontends with the latest tools.
-        </p>
-      </section>
-      <div className="flex gap-6 items-center justify-center">
-        {!isConnected ? (
-          <Button onClick={handleConnect}>Connect Wallet</Button>
-        ) : (
-          <>
-            <Button onClick={handleConnect}>Info</Button>
-            <Button onClick={() => signMessage({ message: "gm" })}>
-              {" "}
-              Say GM{" "}
-            </Button>
-            <Button
-              onClick={() =>
-                sendTransaction({
-                  to: "0x1a343eFB966E63bfA25A2b368455448f02466Ffc",
-                  value: parseEther("0.1"),
-                })
-              }
-              disabled={isConfirming}
-              variant={"secondary"}
-            >
-              Tip .1 Eth
-            </Button>
-          </>
-        )}
-      </div>
-      <div className="flex mt-10 items-center justify-center">
-        <Link href="/counter">
-          <Button className="w-60">Counter</Button>
-        </Link>
-      </div>
+      {!isConnected ? (
+        <div className="flex flex-row justify-evenly p-4 border-b border-gray-400">
+          <img
+            src="smart-mountain-bg.png"
+            alt="smart mountain"
+            className="w-96 h-96"
+          />
+          <div className="p-4 flex flex-col justify-evenly">
+            <h1 className="text-4xl flex justify-center pb-14">
+              Smart Mountain: Pioneering Climate Finance Innovation
+            </h1>
+            <p className=" max-w-[700px] mx-auto text-2xl">
+              At Smart Mountain, we're on a mission to revolutionize how we
+              value and finance nature-based solutions to climate change. We
+              focus on mangrove ecosystems, which play a critical role in carbon
+              sequestration, coastal protection, biodiversity preservation, and
+              regenerating social and environmental impact to benefit
+              communities.{" "}
+            </p>
+          </div>
+        </div>
+      ) : (
+        <Tabs />
+      )}
     </main>
   );
 }
