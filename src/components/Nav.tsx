@@ -13,8 +13,8 @@ export default function Nav() {
           </li>
 
           <li>
-            {/* <ModeToggle /> */}
-            <w3m-button balance="hide"/>
+            <ModeToggle />
+
           </li>
         </ul>
       </nav>
