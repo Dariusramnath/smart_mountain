@@ -55,6 +55,7 @@ const A1 = () => {
           value={formData.fundName}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         />
       </label>
       <label>
@@ -65,6 +66,7 @@ const A1 = () => {
           value={formData.primaryContact}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         />
       </label>
       <label>
@@ -75,6 +77,7 @@ const A1 = () => {
           value={formData.position}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         />
       </label>
       <label>
@@ -85,6 +88,7 @@ const A1 = () => {
           value={formData.email}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         />
       </label>
 
@@ -96,6 +100,7 @@ const A1 = () => {
           value={formData.investmentFocus}
           onChange={handleChange}
           required
+          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
         >
           <option value="">Select Focus</option>
           <option value="Climate Tech">Climate Tech</option>
@@ -113,6 +118,8 @@ const A1 = () => {
           value={formData.investmentRange}
           onChange={handleChange}
           required
+          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+
         >
           <option value="">Select Range</option>
           <option value="<500K">500K</option>
@@ -130,6 +137,8 @@ const A1 = () => {
           value={formData.investmentStage}
           onChange={handleChange}
           required
+          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+
         >
           <option value="">Select Stage</option>
           <option value="Pre-seed">Pre-seed</option>
@@ -148,6 +157,7 @@ const A1 = () => {
           value={formData.esgRequirements}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         />
       </label>
 
@@ -160,6 +170,7 @@ const A1 = () => {
           value={formData.unSdgRequirements}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         />
       </label>
 
@@ -172,6 +183,7 @@ const A1 = () => {
           value={formData.dueDiligenceTimeline}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         />
       </label>
 
@@ -184,10 +196,11 @@ const A1 = () => {
           value={formData.geographicFocus}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         />
       </label>
 
-      <button type="submit">Submit</button>
+      <button type="submit" className="mt-6 ml-24 border border-slate-300 hover:bg-slate-200 w-min px-2 py-1 rounded">Submit</button>
     </form>
   );
 };

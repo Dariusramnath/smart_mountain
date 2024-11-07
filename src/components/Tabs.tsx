@@ -1,62 +1,63 @@
 import { useState } from "react";
-import InvestorForm from "./Forms/Investor/A1";
+import A1 from "./Forms/Investor/A1";
+import A2 from "./Forms/Investor/A2";
+import A3 from "./Forms/Investor/A3";
 
 interface TabContentProps {
-    activeTab: "investor" | "potentialCustomer" | "observer";
-    subOption: "option1" | "option2" | "option3" | "option4" | "option5";
+  activeTab: "investor" | "potentialCustomer" | "observer";
+  subOption: "option1" | "option2" | "option3" | "option4" | "option5";
 }
 
 const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
-    if (activeTab === "investor") {
-      switch (subOption) {
-        case "option1":
-          return (
-            <div>
-              {/* <h3>A1. VENTURE CAPITAL/PRIVATE EQUITY REGISTRATION</h3> */}
-              <InvestorForm />
-            </div>
-          );
-        case "option2":
-          return (
-            <div>
-              <h3>A2. FAMILY OFFICE REGISTRATION</h3>
-              {/* Insert relevant form or content for Family Office Registration */}
-            </div>
-          );
-        case "option3":
-          return (
-            <div>
-              <h3>A3. IMPACT INVESTMENT FUND REGISTRATION</h3>
-              {/* Insert relevant form or content for Impact Investment Fund Registration */}
-            </div>
-          );
-        case "option4":
-          return (
-            <div>
-              <h3>A4. CORPORATE INVESTMENT ARM REGISTRATION</h3>
-              {/* Insert relevant form or content for Corporate Investment Arm Registration */}
-            </div>
-          );
-        case "option5":
-          return (
-            <div>
-              <h3>A5. OTHER INVESTOR REGISTRATION</h3>
-              {/* Insert relevant form or content for Other Investor Registration */}
-            </div>
-          );
-        default:
-          return null;
-      }
+  if (activeTab === "investor") {
+    switch (subOption) {
+      case "option1":
+        return (
+          <div>
+            {/* <h3>A1. VENTURE CAPITAL/PRIVATE EQUITY REGISTRATION</h3> */}
+            <A1 />
+          </div>
+        );
+      case "option2":
+        return (
+          <div>
+            {/* <h3>A2. FAMILY OFFICE REGISTRATION</h3> */}
+            <A2 />
+          </div>
+        );
+      case "option3":
+        return (
+          <div>
+            <A3 />
+          </div>
+        );
+      case "option4":
+        return (
+          <div>
+            <h3>A4. CORPORATE INVESTMENT ARM REGISTRATION</h3>
+            {/* Insert relevant form or content for Corporate Investment Arm Registration */}
+          </div>
+        );
+      case "option5":
+        return (
+          <div>
+            <h3>A5. OTHER INVESTOR REGISTRATION</h3>
+            {/* Insert relevant form or content for Other Investor Registration */}
+          </div>
+        );
+      default:
+        return null;
     }
-    return null;
-  };
+  }
+  return null;
+};
 
 const DropdownTabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState<
     "investor" | "potentialCustomer" | "observer" | ""
   >("");
   const [subOption, setSubOption] = useState<
-    "option1" | "option2" | "option3" | "option4"| "option5"| ""
+    "option1" | "option2" | "option3" | "option4" | "option5" | ""
   >("");
 
   const handleMainChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -67,7 +68,14 @@ const DropdownTabs: React.FC = () => {
   };
 
   const handleSubOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSubOption(e.target.value as "option1" | "option2" | "option3" | "option4"| "option5");
+    setSubOption(
+      e.target.value as
+        | "option1"
+        | "option2"
+        | "option3"
+        | "option4"
+        | "option5"
+    );
   };
 
   return (
@@ -126,7 +134,21 @@ const DropdownTabs: React.FC = () => {
 
       {/* Display the selected tab content */}
       <div className="mt-4">
-        {activeTab && <TabContent activeTab={activeTab as "investor" | "potentialCustomer" | "observer"} subOption={subOption as "option1" | "option2" | "option3" | "option4" | "option5"} />}
+        {activeTab && (
+          <TabContent
+            activeTab={
+              activeTab as "investor" | "potentialCustomer" | "observer"
+            }
+            subOption={
+              subOption as
+                | "option1"
+                | "option2"
+                | "option3"
+                | "option4"
+                | "option5"
+            }
+          />
+        )}
       </div>
     </div>
   );
