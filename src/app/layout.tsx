@@ -35,21 +35,21 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased bg-gray-200",
           fontSans.variable
         )}
       >
-        <div id="root" className="pt-2">
+        <div id="root" >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <Web3ModalProvider>
-              <Nav />
+
+              {/* <Nav /> */}
               {children}
-            </Web3ModalProvider>
+
           </ThemeProvider>
         </div>
         <Toaster richColors />
