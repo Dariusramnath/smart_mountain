@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import A1 from "./Forms/Investor/A1";
 import A2 from "./Forms/Investor/A2";
 import A3 from "./Forms/Investor/A3";
@@ -14,14 +14,12 @@ const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
       case "option1":
         return (
           <div>
-            {/* <h3>A1. VENTURE CAPITAL/PRIVATE EQUITY REGISTRATION</h3> */}
             <A1 />
           </div>
         );
       case "option2":
         return (
           <div>
-            {/* <h3>A2. FAMILY OFFICE REGISTRATION</h3> */}
             <A2 />
           </div>
         );
@@ -49,6 +47,7 @@ const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
         return null;
     }
   }
+
   return null;
 };
 
@@ -60,29 +59,45 @@ const DropdownTabs: React.FC = () => {
     "option1" | "option2" | "option3" | "option4" | "option5" | ""
   >("");
 
+  // Create refs for sub-options dropdown and the tab content
+  const subOptionRef = useRef<HTMLDivElement | null>(null);
+  const contentRef = useRef<HTMLDivElement | null>(null);
+
   const handleMainChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setActiveTab(
-      e.target.value as "investor" | "potentialCustomer" | "observer"
-    );
+    const newTab = e.target.value as "investor" | "potentialCustomer" | "observer";
+    setActiveTab(newTab);
     setSubOption(""); // Reset sub-option when main category changes
   };
 
   const handleSubOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSubOption(
-      e.target.value as
-        | "option1"
-        | "option2"
-        | "option3"
-        | "option4"
-        | "option5"
-    );
+    const newSubOption = e.target.value as "option1" | "option2" | "option3" | "option4" | "option5";
+    setSubOption(newSubOption);
+
+    // Scroll to the content after selecting the sub-option
+    if (contentRef.current) {
+      contentRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
+  // Scroll to the sub-options dropdown after activeTab changes
+  useEffect(() => {
+    if (activeTab && subOptionRef.current) {
+      subOptionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [activeTab]); // This effect runs when activeTab changes
+
+  // Ensure the page is scrolled to the content when subOption changes
+  useEffect(() => {
+    if (subOption && contentRef.current) {
+      contentRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [subOption]); // This effect runs when subOption changes
+
   return (
-    <div className="p-2">
+    <div className="pt-4">
       {/* Main Category Dropdown */}
-      <label>
-        Select Category:
+      <label className="font-bold">
+        Join Here:
         <select value={activeTab} onChange={handleMainChange} className="ml-2">
           <option value="">Choose...</option>
           <option value="investor">Investor</option>
@@ -93,60 +108,53 @@ const DropdownTabs: React.FC = () => {
 
       {/* Show sub-options dropdown only after a main category is selected */}
       {activeTab && (
-        <label className="mt-4 block">
-          Select Sub-option:
-          <select
-            value={subOption}
-            onChange={handleSubOptionChange}
-            className="ml-2"
-          >
-            <option value="">Choose...</option>
-            {activeTab === "investor" && (
-              <>
-                <option value="option1">
-                  A1. VENTURE CAPITAL/PRIVATE EQUITY REGISTRATION
-                </option>
-                <option value="option2">A2. FAMILY OFFICE REGISTRATION</option>
-                <option value="option3">
-                  A3. IMPACT INVESTMENT FUND REGISTRATION
-                </option>
-                <option value="option4">
-                  A4. CORPORATE INVESTMENT ARM REGISTRATION
-                </option>
-                <option value="option5">A5. OTHER INVESTOR REGISTRATION</option>
-              </>
-            )}
-            {activeTab === "potentialCustomer" && (
-              <>
-                <option value="option1">Customer Option 1</option>
-                <option value="option2">Customer Option 2</option>
-              </>
-            )}
-            {activeTab === "observer" && (
-              <>
-                <option value="option1">Observer Option 1</option>
-                <option value="option2">Observer Option 2</option>
-              </>
-            )}
-          </select>
-        </label>
+        <div ref={subOptionRef} className="mt-4">
+          <label className="block font-bold">
+            Select Sub-option:
+            <select
+              value={subOption}
+              onChange={handleSubOptionChange}
+              className="ml-2"
+            >
+              <option value="">Choose...</option>
+              {activeTab === "investor" && (
+                <>
+                  <option value="option1">
+                    A1. VENTURE CAPITAL/PRIVATE EQUITY REGISTRATION
+                  </option>
+                  <option value="option2">A2. FAMILY OFFICE REGISTRATION</option>
+                  <option value="option3">
+                    A3. IMPACT INVESTMENT FUND REGISTRATION
+                  </option>
+                  <option value="option4">
+                    A4. CORPORATE INVESTMENT ARM REGISTRATION
+                  </option>
+                  <option value="option5">A5. OTHER INVESTOR REGISTRATION</option>
+                </>
+              )}
+              {activeTab === "potentialCustomer" && (
+                <>
+                  <option value="option1">Customer Option 1</option>
+                  <option value="option2">Customer Option 2</option>
+                </>
+              )}
+              {activeTab === "observer" && (
+                <>
+                  <option value="option1">Observer Option 1</option>
+                  <option value="option2">Observer Option 2</option>
+                </>
+              )}
+            </select>
+          </label>
+        </div>
       )}
 
       {/* Display the selected tab content */}
-      <div className="mt-4">
+      <div ref={contentRef} className="mt-4">
         {activeTab && (
           <TabContent
-            activeTab={
-              activeTab as "investor" | "potentialCustomer" | "observer"
-            }
-            subOption={
-              subOption as
-                | "option1"
-                | "option2"
-                | "option3"
-                | "option4"
-                | "option5"
-            }
+            activeTab={activeTab as "investor" | "potentialCustomer" | "observer"}
+            subOption={subOption as "option1" | "option2" | "option3" | "option4" | "option5"}
           />
         )}
       </div>
