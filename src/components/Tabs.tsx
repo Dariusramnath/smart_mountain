@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { A1, A2, A3, A4, A5 } from "./Forms/Investor";
-import { B1 } from "./Forms/Customer";
+import { B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13 } from "./Forms/Customer";
 
 interface TabContentProps {
   activeTab: "investor" | "potentialCustomer" | "observer";
@@ -55,25 +55,73 @@ const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
         case "option2":
           return (
             <div>
-              <A2 />
+              <B2 />
             </div>
           );
         case "option3":
           return (
             <div>
-              <A3 />
+              <B3 />
             </div>
           );
         case "option4":
           return (
             <div>
-              <A4 />
+              <B4 />
             </div>
           );
         case "option5":
           return (
             <div>
-              <A5 />
+              <B5 />
+            </div>
+          );
+        case "option6":
+          return (
+            <div>
+              <B6 />
+            </div>
+          );
+        case "option7":
+          return (
+            <div>
+              <B7 />
+            </div>
+          );
+        case "option8":
+          return (
+            <div>
+              <B8 />
+            </div>
+          );
+        case "option9":
+          return (
+            <div>
+              <B9 />
+            </div>
+          );
+        case "option10":
+          return (
+            <div>
+              <B10 />
+            </div>
+          );
+        case "option11":
+          return (
+            <div>
+              <B11 />
+            </div>
+          );
+        case "option12":
+          return (
+            <div>
+              <B12 />
+            </div>
+          );
+        case "option13":
+          return (
+            <div>
+              <B13 />
             </div>
           );
         default:

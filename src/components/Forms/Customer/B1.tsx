@@ -39,7 +39,7 @@ const B1FinancierRegistration = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch("/api/submitFinancierRegistration", {
+    const response = await fetch("/api/submitForm", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const B1FinancierRegistration = () => {
           />
           Investment Fund
         </label>
-        <label className="block font-semibold mb-3">
+        <label className="block font-semibold">
           <input
             type="radio"
             name="institutionType"
@@ -123,12 +123,12 @@ const B1FinancierRegistration = () => {
             value={formData.otherInstitutionType || ""}
             onChange={handleChange}
             placeholder="Please specify"
-            className="mr-2"
+            className="mr-2 w-full p-2 mt-1 border rounded"
           />
         )}
       </div>
 
-      <label className="block font-semibold mb-3">Primary Services:</label>
+      <label className="block font-semibold mb-3 mt-3">Primary Services:</label>
       <div>
         <label className="block font-semibold mb-3">
           <input
@@ -163,7 +163,7 @@ const B1FinancierRegistration = () => {
           />
           Asset Management
         </label>
-        <label className="block font-semibold mb-3">
+        <label className="block font-semibold">
           <input
             type="checkbox"
             name="primaryServices"
@@ -181,11 +181,12 @@ const B1FinancierRegistration = () => {
             value={formData.otherPrimaryService || ""}
             onChange={handleChange}
             placeholder="Please specify"
+            className="w-full p-2 border rounded"
           />
         )}
       </div>
 
-      <label className="block font-semibold mb-3">
+      <label className="block font-semibold mb-3 mt-3">
         Asset Size:
         <input
           type="text"
@@ -258,10 +259,16 @@ const B1FinancierRegistration = () => {
           name="additionalComments"
           value={formData.additionalComments}
           onChange={handleChange}
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-700 active:bg-blue-400"
+      >
+        Submit
+      </button>
     </form>
   );
 };

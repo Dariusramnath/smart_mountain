@@ -66,20 +66,20 @@ const A3 = () => {
       alert("Form submitted successfully!");
       setFormData({
         fundName: "",
-    primaryContact: "",
-    position: "",
-    emailOrPhone: "",
-    impactFocus: "",
-    financialReturnTarget: "",
-    impactMetricsRequired: "",
-    geographicFocus: "",
-    investmentRange: "",
-    dueDiligenceRequirements: "",
-    registrationDate: "",
-    howDidYouHear: "",
-    interestInJamaicaPilot: "",
-    platformAccessRequirements: "",
-    additionalComments: "",
+        primaryContact: "",
+        position: "",
+        emailOrPhone: "",
+        impactFocus: "",
+        financialReturnTarget: "",
+        impactMetricsRequired: "",
+        geographicFocus: "",
+        investmentRange: "",
+        dueDiligenceRequirements: "",
+        registrationDate: "",
+        howDidYouHear: "",
+        interestInJamaicaPilot: "",
+        platformAccessRequirements: "",
+        additionalComments: "",
       });
     } else {
       alert("Error submitting form: " + result.error);
@@ -205,21 +205,21 @@ const A3 = () => {
 
       {/* Investment Range */}
       <div className="mb-4">
-      <label className="font-semibold block mb-3">
-        Investment Range (USD):
-        <select
-          name="investmentRange"
-          value={formData.investmentRange}
-          onChange={handleChange}
-          required
-          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400"
-        >
-          <option value="">Select Range</option>
-          <option value="<500K">{"<500K"}</option>
-          <option value="$500K-$2M">$500K-$2M</option>
-          <option value=">$2M">{"> $2M"}</option>
-        </select>
-      </label>
+        <label className="font-semibold block mb-3">
+          Investment Range (USD):
+          <select
+            name="investmentRange"
+            value={formData.investmentRange}
+            onChange={handleChange}
+            required
+            className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400"
+          >
+            <option value="">Select Range</option>
+            <option value="<500K">{"<500K"}</option>
+            <option value="$500K-$2M">$500K-$2M</option>
+            <option value=">$2M">{"> $2M"}</option>
+          </select>
+        </label>
       </div>
 
       {/* Due Diligence Requirements */}
@@ -304,14 +304,12 @@ const A3 = () => {
         </label>
       </div>
 
-      <div className="w-full flex justify-center">
-        <button
-          type="submit"
-          className="mb-10 mt-6 border border-slate-300 bg-white hover:bg-[#59b6bd] active:bg-[#8cd3db] w-min px-3 py-1 rounded-lg"
-        >
-          Submit
-        </button>
-      </div>
+      <button
+        type="submit"
+        className="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-700 active:bg-blue-400"
+      >
+        Submit
+      </button>
     </form>
   );
 };

@@ -317,14 +317,12 @@ const A1 = () => {
         </label>
       </div>
 
-      <div className="w-full flex justify-center">
-        <button
-          type="submit"
-          className="mb-10 mt-6 border border-slate-300 bg-white hover:bg-[#59b6bd] active:bg-[#8cd3db] w-min px-3 py-1 rounded-lg"
-        >
-          Submit
-        </button>
-      </div>
+      <button
+        type="submit"
+        className="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-700 active:bg-blue-400"
+      >
+        Submit
+      </button>
     </form>
   );
 };
