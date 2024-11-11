@@ -49,13 +49,45 @@ const A2 = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    const response = await fetch("/api/submitForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert("Form submitted successfully!");
+      setFormData({
+        familyOfficeName: "",
+        contactPerson: "",
+        position: "",
+        emailOrPhone: "",
+        investmentApproach: "",
+        investmentFocus: "",
+        investmentRange: "",
+        investmentTimeline: "",
+        impactRequirements: "",
+        registrationDate: "",
+        howDidYouHear: "",
+        interestInJamaicaPilot: "",
+        platformAccessRequirements: "",
+        additionalComments: "",
+      });
+    } else {
+      alert("Error submitting form: " + result.error);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow"
+    >
       <label className="block font-semibold mb-3">
         Family Office Name:
         <input

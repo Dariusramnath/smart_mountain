@@ -56,9 +56,39 @@ const A5Form = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    const response = await fetch("/api/submitForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert("Form submitted successfully!");
+      setFormData({
+        organizationName: "",
+        typeOfInvestor: "",
+        primaryContact: "",
+        position: "",
+        emailOrPhone: "",
+        investmentFocus: "",
+        typicalSize: "",
+        stagePreference: "",
+        specialRequirements: "",
+        valueAddCapabilities: "",
+        registrationDate: "",
+        howDidYouHear: "",
+        interestInJamaicaPilot: "",
+        platformAccessRequirements: "",
+        additionalComments: "",
+      });
+    } else {
+      alert("Error submitting form: " + result.error);
+    }
   };
 
   return (

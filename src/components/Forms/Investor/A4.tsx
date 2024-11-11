@@ -90,8 +90,52 @@ const A4Form: React.FC = () => {
     }));
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const response = await fetch("/api/submitForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert("Form submitted successfully!");
+      setFormData({
+        parentCompany: "",
+    investmentDivision: "",
+    primaryContact: "",
+    positionTitle: "",
+    emailPhone: "",
+    strategicObjectives: {
+      financialReturns: false,
+      technologyAccess: false,
+      marketDevelopment: false,
+      environmentalImpact: false,
+      other: "",
+    },
+    investmentParameters: {
+      size: "",
+      stagePreference: "",
+    },
+    strategicAlignmentRequirements: "",
+    unSdgRequirements: "",
+    corporateEsgGoals: "",
+    registrationDate: "",
+    howDidYouHear: "",
+    interestInJamaicaPilot: "",
+    platformAccessRequirements: "",
+    additionalComments: "",
+      });
+    } else {
+      alert("Error submitting form: " + result.error);
+    }
+  };
+
   return (
-    <form className="p-4 w-full mx-auto bg-white rounded shadow">
+    <form onSubmit={handleSubmit} className="p-4 w-full mx-auto bg-white rounded shadow">
       <h2 className="text-2xl font-bold mb-4">
         Corporate Investment Arm Registration
       </h2>
