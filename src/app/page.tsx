@@ -1,16 +1,4 @@
 "use client";
-import Link from "next/link";
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  useAccount,
-  useSendTransaction,
-  useSignMessage,
-  useWaitForTransactionReceipt,
-} from "wagmi";
-import { parseEther } from "viem";
-import { toast } from "sonner";
-import { useWeb3Modal } from "@web3modal/wagmi/react";
 import Tabs from "@/components/Tabs";
 
 export default function Home() {
@@ -25,7 +13,7 @@ export default function Home() {
             Smart Mountain: Pioneering Climate Finance Innovation
           </h1>
           <p className=" max-w-[700px] mx-auto text-2xl">
-            At Smart Mountain, we're on a mission to revolutionize how we value
+            At Smart Mountain, we&apos;re on a mission to revolutionize how we value
             and finance nature-based solutions to climate change. We focus on
             mangrove ecosystems, which play a critical role in carbon
             sequestration, coastal protection, biodiversity preservation, and
@@ -53,11 +41,11 @@ export default function Home() {
             </p>
             <h1 className="pt-8 text-4xl font-bold">Our Solution</h1>
             <p className="pt-2 text-lg">
-              Smart Mountain is developing the world's first artificial
+              Smart Mountain is developing the world&apos;s first artificial
               intelligence (AI) platform to optimise the potential of integrated
               mangrove management systems backed by alternative financial
               instruments to derisk a validated environmental credit market.
-              We're creating a groundbreaking ecosystem that:
+              We&apos;re creating a groundbreaking ecosystem that:
             </p>
             <ul className="list-disc list-inside text-lg">
               <li className="pt-6 ">
@@ -84,7 +72,7 @@ export default function Home() {
               Market-enabling social and environmental impact and regeneration{" "}
             </h1>
             <p className="pt-6 text-lg">
-              We've identified a significant market opportunity in the
+              We&apos;ve identified a significant market opportunity in the
               Caribbean:
             </p>
             <ul className="list-disc list-inside text-lg">
@@ -117,7 +105,7 @@ export default function Home() {
               project pipeline. Hackernoon also nominated Smart Mountain as one
               of the startups of the year for 2024.
             </p>
-            <p className="pt-6 text-lg">We're currently focused on:</p>
+            <p className="pt-6 text-lg">We&apos;re currently focused on:</p>
             <ol className="list-disc list-inside text-lg">
               <li className="pt-2">
                 Advancing stakeholder engagement to develop, iterate and refine
@@ -142,9 +130,9 @@ export default function Home() {
             </h1>
             
             <p className="pt-2 text-lg">
-              By investing in Mangrove Markets, you're not just backing a
-              business – you're supporting a solution that makes conservation
-              financially sustainable. We're creating a future where protecting
+              By investing in Mangrove Markets, you&apos;re not just backing a
+              business – you&apos;re supporting a solution that makes conservation
+              financially sustainable. We&apos;re creating a future where protecting
               natural assets and generating returns go hand in hand. Contact us
               to learn more about how you can be part of this groundbreaking
               initiative in climate finance innovation.
