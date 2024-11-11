@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { A1, A2, A3, A4, A5 } from "./Forms/Investor";
+import { B1 } from "./Forms/Customer";
 
 interface TabContentProps {
   activeTab: "investor" | "potentialCustomer" | "observer";
-  subOption: "option1" | "option2" | "option3" | "option4" | "option5";
+  subOption: string;
 }
 
 const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
@@ -42,6 +43,42 @@ const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
       default:
         return null;
     }
+  } 
+  if (activeTab === "potentialCustomer") {
+    switch (subOption) {
+        case "option1":
+          return (
+            <div>
+              <B1 />
+            </div>
+          );
+        case "option2":
+          return (
+            <div>
+              <A2 />
+            </div>
+          );
+        case "option3":
+          return (
+            <div>
+              <A3 />
+            </div>
+          );
+        case "option4":
+          return (
+            <div>
+              <A4 />
+            </div>
+          );
+        case "option5":
+          return (
+            <div>
+              <A5 />
+            </div>
+          );
+        default:
+          return null;
+      }
   }
 
   return null;
@@ -145,8 +182,19 @@ const DropdownTabs: React.FC = () => {
               )}
               {activeTab === "potentialCustomer" && (
                 <>
-                  <option value="option1">Customer Option 1</option>
-                  <option value="option2">Customer Option 2</option>
+                  <option value="option1">B1. FINANCIER REGISTRATION</option>
+                  <option value="option2">B2. ENVIRONMENTAL CREDITS PURCHASER REGISTRATION</option>
+                  <option value="option3">B3. GOVERNMENT AGENCY REGISTRATION</option>
+                  <option value="option4">B4. CONSERVATION SERVICE PROVIDER REGISTRATION</option>
+                  <option value="option5">B5. COMMUNITY STAKEHOLDER REGISTRATION</option>
+                  <option value="option6">B6. LANDOWNER REGISTRATION</option>
+                  <option value="option7">B7. DATA/ANALYTICS USER REGISTRATION</option>
+                  <option value="option8">B8. INSURANCE COMPANY REGISTRATION</option>
+                  <option value="option9">B9. DEVELOPMENT ORGANIZATION REGISTRATION</option>
+                  <option value="option10">B10. CORPORATE ESG DEPARTMENT REGISTRATION</option>
+                  <option value="option11">B11. FINANCIAL MARKET INFRASTRUCTURE PROVIDER REGISTRATION</option>
+                  <option value="option12">B12. TOURISM INDUSTRY REGISTRATION</option>
+                  <option value="option13">B13. OTHER STAKEHOLDER REGISTRATION</option>
                 </>
               )}
               {activeTab === "observer" && (
