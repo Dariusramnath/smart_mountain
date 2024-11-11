@@ -46,8 +46,8 @@ const A1 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
-      <label>
+    <form onSubmit={handleSubmit} className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow">
+      <label className="block font-semibold mb-3">
         Fund Name:
         <input
           type="text"
@@ -55,10 +55,10 @@ const A1 = () => {
           value={formData.fundName}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
-      <label>
+      <label className="block font-semibold mb-3">
         Primary Contact:
         <input
           type="text"
@@ -66,10 +66,10 @@ const A1 = () => {
           value={formData.primaryContact}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
-      <label>
+      <label className="block font-semibold mb-3">
         Position:
         <input
           type="text"
@@ -77,10 +77,10 @@ const A1 = () => {
           value={formData.position}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
-      <label>
+      <label className="block font-semibold mb-3">
         Email:
         <input
           type="email"
@@ -88,12 +88,12 @@ const A1 = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* Investment Focus */}
-      <label>
+      <label className="block font-semibold mb-3">
         Investment Focus:
         <select
           name="investmentFocus"
@@ -111,7 +111,7 @@ const A1 = () => {
       </label>
 
       {/* Investment Range */}
-      <label>
+      <label className="block font-semibold mb-3">
         Typical Investment Range (USD):
         <select
           name="investmentRange"
@@ -129,7 +129,7 @@ const A1 = () => {
       </label>
 
       {/* Investment Stage */}
-      <label>
+      <label className="block font-semibold mb-3">
         Investment Stage Preference:
         <select
           name="investmentStage"
@@ -147,7 +147,7 @@ const A1 = () => {
       </label>
 
       {/* ESG Requirements */}
-      <label>
+      <label className="block font-semibold mb-3">
         ESG Requirements:
         <input
           type="text"
@@ -155,12 +155,12 @@ const A1 = () => {
           value={formData.esgRequirements}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* UN SDG Requirements */}
-      <label>
+      <label className="block font-semibold mb-3">
         UN SDG Requirements:
         <input
           type="text"
@@ -168,12 +168,12 @@ const A1 = () => {
           value={formData.unSdgRequirements}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* Due Diligence Timeline */}
-      <label>
+      <label className="block font-semibold mb-3">
         Due Diligence Timeline:
         <input
           type="text"
@@ -181,12 +181,12 @@ const A1 = () => {
           value={formData.dueDiligenceTimeline}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* Geographic Focus */}
-      <label>
+      <label className="block font-semibold mb-3">
         Geographic Focus:
         <input
           type="text"
@@ -194,7 +194,7 @@ const A1 = () => {
           value={formData.geographicFocus}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 

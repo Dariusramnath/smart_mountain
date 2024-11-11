@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import A1 from "./Forms/Investor/A1";
-import A2 from "./Forms/Investor/A2";
-import A3 from "./Forms/Investor/A3";
+import { A1, A2, A3, A4 } from "./Forms/Investor";
+
 
 interface TabContentProps {
   activeTab: "investor" | "potentialCustomer" | "observer";
@@ -32,8 +31,7 @@ const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
       case "option4":
         return (
           <div>
-            <h3>A4. CORPORATE INVESTMENT ARM REGISTRATION</h3>
-            {/* Insert relevant form or content for Corporate Investment Arm Registration */}
+            <A4/>
           </div>
         );
       case "option5":

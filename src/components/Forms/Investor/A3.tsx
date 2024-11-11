@@ -40,65 +40,74 @@ const A3 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
-      <label>
-        Fund Name:
-        <input
-          type="text"
-          name="fundName"
-          value={formData.fundName}
-          onChange={handleChange}
-          required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow"
+    >
+      <div className="mb-4">
+        <label className="block font-semibold">
+          Fund Name:
+          <input
+            type="text"
+            name="fundName"
+            value={formData.fundName}
+            onChange={handleChange}
+            required
+            className="w-full p-2 mt-1 border rounded"
+          />
+        </label>
+      </div>
 
-        />
-      </label>
-      <label>
-        Primary Contact:
-        <input
-          type="text"
-          name="primaryContact"
-          value={formData.primaryContact}
-          onChange={handleChange}
-          required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+      <div className="mb-4">
+        <label className="block font-semibold">
+          Primary Contact:
+          <input
+            type="text"
+            name="primaryContact"
+            value={formData.primaryContact}
+            onChange={handleChange}
+            required
+            className="w-full p-2 mt-1 border rounded"
+          />
+        </label>
+      </div>
 
-        />
-      </label>
-      <label>
-        Position/Title:
-        <input
-          type="text"
-          name="position"
-          value={formData.position}
-          onChange={handleChange}
-          required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+      <div className="mb-4">
+        <label className="block font-semibold">
+          Position/Title:
+          <input
+            type="text"
+            name="position"
+            value={formData.position}
+            onChange={handleChange}
+            required
+            className="w-full p-2 mt-1 border rounded"
+          />
+        </label>
+      </div>
 
-        />
-      </label>
-      <label>
-        Email/Phone:
-        <input
-          type="text"
-          name="emailOrPhone"
-          value={formData.emailOrPhone}
-          onChange={handleChange}
-          required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+      <div className="mb-4">
+        <label className="block font-semibold">
+          Email/Phone:
+          <input
+            type="text"
+            name="emailOrPhone"
+            value={formData.emailOrPhone}
+            onChange={handleChange}
+            required
+            className="w-full p-2 mt-1 border rounded"
+          />
+        </label>
+      </div>
 
-        />
-      </label>
-
-      {/* Impact Focus */}
-      <label>
+      <label className="block font-semibold mb-3">
         Impact Focus:
         <select
           name="impactFocus"
           value={formData.impactFocus}
           onChange={handleChange}
           required
-          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400"
         >
           <option value="">Select Impact Focus</option>
           <option value="Environmental">Environmental</option>
@@ -109,7 +118,7 @@ const A3 = () => {
       </label>
 
       {/* Financial Return Target */}
-      <label>
+      <label className="block font-semibold mb-3">
         Financial Return Target:
         <input
           type="text"
@@ -117,13 +126,12 @@ const A3 = () => {
           value={formData.financialReturnTarget}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* Impact Metrics Required */}
-      <label>
+      <label className="block font-semibold mb-3">
         Impact Metrics Required:
         <input
           type="text"
@@ -131,13 +139,12 @@ const A3 = () => {
           value={formData.impactMetricsRequired}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* Geographic Focus */}
-      <label>
+      <label className="block font-semibold mb-3">
         Geographic Focus:
         <input
           type="text"
@@ -145,20 +152,20 @@ const A3 = () => {
           value={formData.geographicFocus}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* Investment Range */}
-      <label>
+      <div className="mb-4">
+      <label className="font-semibold block mb-3">
         Investment Range (USD):
         <select
           name="investmentRange"
           value={formData.investmentRange}
           onChange={handleChange}
           required
-          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400"
         >
           <option value="">Select Range</option>
           <option value="<500K">{"<500K"}</option>
@@ -166,9 +173,11 @@ const A3 = () => {
           <option value=">$2M">{"> $2M"}</option>
         </select>
       </label>
+      </div>
 
       {/* Due Diligence Requirements */}
-      <label>
+      <div></div>
+      <label className="block font-semibold">
         Due Diligence Requirements:
         <input
           type="text"
@@ -176,8 +185,7 @@ const A3 = () => {
           value={formData.dueDiligenceRequirements}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 

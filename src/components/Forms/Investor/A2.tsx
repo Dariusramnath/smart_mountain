@@ -38,8 +38,8 @@ const A2 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
-      <label>
+    <form onSubmit={handleSubmit} className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow">
+      <label className="block font-semibold mb-3">
         Family Office Name:
         <input
           type="text"
@@ -47,10 +47,10 @@ const A2 = () => {
           value={formData.familyOfficeName}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
-      <label>
+      <label className="block font-semibold mb-3">
         Contact Person:
         <input
           type="text"
@@ -58,10 +58,10 @@ const A2 = () => {
           value={formData.contactPerson}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
-      <label>
+      <label className="block font-semibold mb-3">
         Position/Title:
         <input
           type="text"
@@ -69,10 +69,10 @@ const A2 = () => {
           value={formData.position}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
-      <label>
+      <label className="block font-semibold mb-3">
         Email/Phone:
         <input
           type="text"
@@ -80,12 +80,12 @@ const A2 = () => {
           value={formData.emailOrPhone}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* Investment Approach */}
-      <label>
+      <label className="block font-semibold mb-3">
         Investment Approach:
         <select
           name="investmentApproach"
@@ -102,7 +102,7 @@ const A2 = () => {
       </label>
 
       {/* Investment Focus */}
-      <label>
+      <label className="block font-semibold mb-3">
         Investment Focus:
         <select
           name="investmentFocus"
@@ -120,7 +120,7 @@ const A2 = () => {
       </label>
 
       {/* Investment Range */}
-      <label>
+      <label className="block font-semibold mb-3">
         Investment Range (USD):
         <select
           name="investmentRange"
@@ -137,7 +137,7 @@ const A2 = () => {
       </label>
 
       {/* Investment Timeline */}
-      <label>
+      <label className="block font-semibold mb-3">
         Investment Timeline:
         <input
           type="text"
@@ -145,12 +145,12 @@ const A2 = () => {
           value={formData.investmentTimeline}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
       {/* Impact Requirements */}
-      <label>
+      <label className="block font-semibold mb-3">
         Impact Requirements:
         <input
           type="text"
@@ -158,7 +158,7 @@ const A2 = () => {
           value={formData.impactRequirements}
           onChange={handleChange}
           required
-          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          className="w-full p-2 mt-1 border rounded"
         />
       </label>
 
