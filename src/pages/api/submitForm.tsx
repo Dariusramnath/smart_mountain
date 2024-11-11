@@ -1,41 +1,55 @@
-// pages/api/submitForm.ts
 import { NextApiRequest, NextApiResponse } from "next";
 import { MongoClient } from "mongodb";
 
-const MONGODB_URI = process.env.MONGODB_URI; // Store this in .env.local
+// Ensure that MongoDB URI and database name are loaded from .env.local
+const MONGODB_URI = process.env.MONGODB_URI;
+const DATABASE_NAME = process.env.DATABASE_NAME;
+
+if (!MONGODB_URI) {
+  throw new Error("MONGODB_URI environment variable is not defined");
+}
+if (!DATABASE_NAME) {
+  throw new Error("DATABASE_NAME environment variable is not defined");
+}
+
+let cachedDb: any = null;
 
 // Connect to MongoDB
 const connectToDatabase = async () => {
-  if (!MONGODB_URI) {
-    throw new Error("MONGODB_URI environment variable is not defined");
+  if (cachedDb) {
+    return cachedDb;
   }
+
   const client = new MongoClient(MONGODB_URI);
-
   await client.connect();
-
-  // Return the database connection
-  return client.db(process.env.DATABASE_NAME);
+  cachedDb = client.db(DATABASE_NAME); // Store the connection in a cache for reuse
+  return cachedDb;
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+// Create the API handler function
+const submitForm = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
-    const db = await connectToDatabase();
-    const collection = db.collection("form_submissions");
-
     try {
+      const db = await connectToDatabase();
+      const collection = db.collection("form_submissions");
+
       // Get form data from the request body
       const formData = req.body;
-      console.log("Hello");
-      console.log(formData);
+
+      console.log("Received form data:", formData);
 
       // Insert form data into MongoDB
       await collection.insertOne(formData);
 
       res.status(200).json({ message: "Form data stored successfully!" });
     } catch (error) {
-      res.status(500).json({ error: "Failed to store form data" });
+      console.error("Error while inserting form data:", error);
+      res.status(500).json({ error: "Failed to store form data", details: error });
     }
   } else {
     res.status(405).json({ error: "Method Not Allowed" });
   }
 };
+
+// Export the handler
+export default submitForm;
