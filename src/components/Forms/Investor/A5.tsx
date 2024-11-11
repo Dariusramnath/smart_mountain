@@ -58,6 +58,8 @@ const A5Form = () => {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Send the POST request to the server
     const response = await fetch("/api/submitForm", {
       method: "POST",
       headers: {
@@ -65,10 +67,22 @@ const A5Form = () => {
       },
       body: JSON.stringify(formData),
     });
-
-    const result = await response.json();
+  
+    let result;
+    try {
+      // Attempt to parse the response as JSON
+      result = await response.json();
+    } catch (error) {
+      // Handle invalid JSON response
+      alert("Invalid response from the server.");
+      return;
+    }
+  
+    // Check if the response is OK (status 200-299)
     if (response.ok) {
       alert("Form submitted successfully!");
+  
+      // Reset the form data
       setFormData({
         organizationName: "",
         typeOfInvestor: "",
@@ -87,9 +101,11 @@ const A5Form = () => {
         additionalComments: "",
       });
     } else {
-      alert("Error submitting form: " + result.error);
+      // Handle error response from the server
+      alert("Error submitting form: " + result?.error || "Unknown error");
     }
   };
+  
 
   return (
     <form

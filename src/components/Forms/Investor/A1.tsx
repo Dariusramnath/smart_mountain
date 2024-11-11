@@ -89,7 +89,7 @@ const A1 = () => {
         additionalComments: "",
       });
     } else {
-      alert("Error submitting form: " + result.error);
+      alert("Error submitting form");
     }
   };
 
