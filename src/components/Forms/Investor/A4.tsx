@@ -20,6 +20,11 @@ type FormData = {
   strategicAlignmentRequirements: string;
   unSdgRequirements: string;
   corporateEsgGoals: string;
+  registrationDate: string;
+  howDidYouHear: string;
+  interestInJamaicaPilot: string;
+  platformAccessRequirements: string;
+  additionalComments: string;
 };
 
 const A4Form: React.FC = () => {
@@ -43,6 +48,11 @@ const A4Form: React.FC = () => {
     strategicAlignmentRequirements: "",
     unSdgRequirements: "",
     corporateEsgGoals: "",
+    registrationDate: "",
+    howDidYouHear: "",
+    interestInJamaicaPilot: "",
+    platformAccessRequirements: "",
+    additionalComments: "",
   });
 
   const handleChange = (
@@ -237,6 +247,73 @@ const A4Form: React.FC = () => {
           onChange={handleChange}
           className="w-full p-2 border rounded"
         />
+      </div>
+      {/* Common Fields for All Forms */}
+      <div className="mt-4">
+        <label className="block font-semibold mb-3">
+          Registration Date:
+          <input
+            type="date"
+            name="registrationDate"
+            value={formData.registrationDate}
+            onChange={handleChange}
+            required
+            className="w-full p-2 mt-1 border rounded"
+          />
+        </label>
+
+        <label className="block font-semibold mb-3">
+          How did you hear about us?:
+          <input
+            type="text"
+            name="howDidYouHear"
+            value={formData.howDidYouHear}
+            onChange={handleChange}
+            required
+            className="w-full p-2 mt-1 border rounded"
+          />
+        </label>
+
+        {/* Interest in Jamaica Pilot */}
+        <div className="block mt-2">
+          <label className="block font-semibold mb-3">
+            Interest in Jamaica Pilot:
+          </label>
+          {["Yes", "No", "Maybe"].map((option) => (
+            <label className="block font-semibold mb-3" key={option}>
+              <input
+                type="radio"
+                name="interestInJamaicaPilot"
+                value={option}
+                checked={formData.interestInJamaicaPilot === option}
+                onChange={handleRadioChange}
+                className="mr-2"
+              />
+              {option}
+            </label>
+          ))}
+        </div>
+
+        <label className="block font-semibold mb-3">
+          Platform Access Requirements:
+          <textarea
+            name="platformAccessRequirements"
+            value={formData.platformAccessRequirements}
+            onChange={handleChange}
+            required
+            className="w-full p-2 mt-1 border rounded"
+          />
+        </label>
+
+        <label className="block font-semibold mb-3">
+          Additional Comments:
+          <textarea
+            name="additionalComments"
+            value={formData.additionalComments}
+            onChange={handleChange}
+            className="w-full p-2 mt-1 border rounded"
+          />
+        </label>
       </div>
 
       <button
