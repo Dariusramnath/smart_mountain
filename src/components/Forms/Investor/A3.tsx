@@ -49,6 +49,8 @@ const A3 = () => {
           value={formData.fundName}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+
         />
       </label>
       <label>
@@ -59,6 +61,8 @@ const A3 = () => {
           value={formData.primaryContact}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+
         />
       </label>
       <label>
@@ -69,6 +73,8 @@ const A3 = () => {
           value={formData.position}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+
         />
       </label>
       <label>
@@ -79,6 +85,8 @@ const A3 = () => {
           value={formData.emailOrPhone}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+
         />
       </label>
 
@@ -90,6 +98,7 @@ const A3 = () => {
           value={formData.impactFocus}
           onChange={handleChange}
           required
+          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
         >
           <option value="">Select Impact Focus</option>
           <option value="Environmental">Environmental</option>
@@ -108,6 +117,8 @@ const A3 = () => {
           value={formData.financialReturnTarget}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+
         />
       </label>
 
@@ -120,6 +131,8 @@ const A3 = () => {
           value={formData.impactMetricsRequired}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+
         />
       </label>
 
@@ -132,6 +145,8 @@ const A3 = () => {
           value={formData.geographicFocus}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+
         />
       </label>
 
@@ -143,6 +158,7 @@ const A3 = () => {
           value={formData.investmentRange}
           onChange={handleChange}
           required
+          className="ml-3 inline-flex my-1 justify-center gap-x-1.5 rounded-md bg-white px-1 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
         >
           <option value="">Select Range</option>
           <option value="<500K">{"<500K"}</option>
@@ -160,10 +176,19 @@ const A3 = () => {
           value={formData.dueDiligenceRequirements}
           onChange={handleChange}
           required
+          className="my-1 ml-3 bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+
         />
       </label>
 
-      <button type="submit">Submit</button>
+      <div className="w-full flex justify-center">
+        <button
+          type="submit"
+          className="mb-10 mt-6 border border-slate-300 bg-white hover:bg-[#59b6bd] active:bg-[#8cd3db] w-min px-3 py-1 rounded-lg"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 };
