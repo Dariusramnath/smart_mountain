@@ -2,6 +2,8 @@ import { useState } from "react";
 
 // Define the type for the form data
 interface FormData {
+  category: string;
+  subCategory: string;
   organizationName: string;
   typeOfInvestor: string;
   primaryContact: string;
@@ -22,6 +24,8 @@ interface FormData {
 const A5Form = () => {
   // Initialize the form state
   const [formData, setFormData] = useState<FormData>({
+    category: "Investor",
+    subCategory: "A5",
     organizationName: "",
     typeOfInvestor: "",
     primaryContact: "",
@@ -58,7 +62,7 @@ const A5Form = () => {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Send the POST request to the server
     const response = await fetch("/api/submitForm", {
       method: "POST",
@@ -67,7 +71,7 @@ const A5Form = () => {
       },
       body: JSON.stringify(formData),
     });
-  
+
     let result;
     try {
       // Attempt to parse the response as JSON
@@ -77,13 +81,15 @@ const A5Form = () => {
       alert("Invalid response from the server.");
       return;
     }
-  
+
     // Check if the response is OK (status 200-299)
     if (response.ok) {
       alert("Form submitted successfully!");
-  
+
       // Reset the form data
       setFormData({
+        category: "Investor",
+        subCategory: "A5",
         organizationName: "",
         typeOfInvestor: "",
         primaryContact: "",
@@ -105,7 +111,6 @@ const A5Form = () => {
       alert("Error submitting form: " + result?.error || "Unknown error");
     }
   };
-  
 
   return (
     <form

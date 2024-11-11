@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 // Define the types for form data, including the new fields
 interface FormData {
+  category: string;
+  subCategory: string;
   fundName: string;
   primaryContact: string;
   position: string;
@@ -22,6 +24,8 @@ interface FormData {
 
 const A1 = () => {
   const [formData, setFormData] = useState<FormData>({
+    category: "Investor",
+    subCategory: "A1",
     fundName: "",
     primaryContact: "",
     position: "",
@@ -71,6 +75,8 @@ const A1 = () => {
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Investor",
+        subCategory: "VENTURE CAPITAL/PRIVATE EQUITY REGISTRATION",
         fundName: "",
         primaryContact: "",
         position: "",

@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 interface FormData {
+  category: string;
+  subCategory: string;
   communityName: string;
   location: string;
   stakeholderType: string;
@@ -16,6 +18,8 @@ interface FormData {
 
 const CommunityStakeholderRegistrationForm = () => {
   const [formData, setFormData] = useState<FormData>({
+    category: "Potential Customer",
+    subCategory: "B4",
     communityName: "",
     location: "",
     stakeholderType: "",
@@ -56,6 +60,8 @@ const CommunityStakeholderRegistrationForm = () => {
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Potential Customer",
+        subCategory: "B4",
         communityName: "",
         location: "",
         stakeholderType: "",

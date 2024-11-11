@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 interface FormData {
+  category: string;
+  subCategory: string;
   organizationType: string;
   purchaseMotivation: string[];
   otherPurchaseMotivation?: string;
@@ -17,6 +19,8 @@ interface FormData {
 
 const PurchaseMotivationForm = () => {
   const [formData, setFormData] = useState<FormData>({
+    category: "Potential Customer",
+    subCategory: "B2",
     organizationType: "",
     purchaseMotivation: [],
     annualVolumeNeed: "",
@@ -52,6 +56,8 @@ const PurchaseMotivationForm = () => {
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Potential Customer",
+        subCategory: "B2",
         organizationType: "",
         purchaseMotivation: [],
         annualVolumeNeed: "",
@@ -81,7 +87,6 @@ const PurchaseMotivationForm = () => {
           value={formData.organizationType}
           onChange={handleChange}
           className="w-full p-2 border rounded"
-
         />
       </label>
 
@@ -116,8 +121,8 @@ const PurchaseMotivationForm = () => {
             value="Investment"
             checked={formData.purchaseMotivation.includes("Investment")}
             onChange={handleChange}
-          
-          className="mr-2"/>
+            className="mr-2"
+          />
           Investment
         </label>
         <label className="block font-semibold mb-3">
@@ -127,8 +132,8 @@ const PurchaseMotivationForm = () => {
             value="Other"
             checked={formData.purchaseMotivation.includes("Other")}
             onChange={handleChange}
-          
-          className="mr-2"/>
+            className="mr-2"
+          />
           Other:
         </label>
         {formData.purchaseMotivation.includes("Other") && (
@@ -165,7 +170,9 @@ const PurchaseMotivationForm = () => {
         />
       </label>
 
-      <label className="block font-semibold mb-3">Credit Type Preference:</label>
+      <label className="block font-semibold mb-3">
+        Credit Type Preference:
+      </label>
       <div>
         <label className="block font-semibold mb-3">
           <input
@@ -174,8 +181,8 @@ const PurchaseMotivationForm = () => {
             value="Carbon"
             checked={formData.creditTypePreference.includes("Carbon")}
             onChange={handleChange}
-          
-          className="mr-2"/>
+            className="mr-2"
+          />
           Carbon
         </label>
         <label className="block font-semibold mb-3">
@@ -185,8 +192,8 @@ const PurchaseMotivationForm = () => {
             value="Biodiversity"
             checked={formData.creditTypePreference.includes("Biodiversity")}
             onChange={handleChange}
-          
-          className="mr-2"/>
+            className="mr-2"
+          />
           Biodiversity
         </label>
         <label className="block font-semibold mb-3">
@@ -196,8 +203,8 @@ const PurchaseMotivationForm = () => {
             value="Blue Carbon"
             checked={formData.creditTypePreference.includes("Blue Carbon")}
             onChange={handleChange}
-          
-          className="mr-2"/>
+            className="mr-2"
+          />
           Blue Carbon
         </label>
         <label className="block font-semibold mb-3">
@@ -207,8 +214,8 @@ const PurchaseMotivationForm = () => {
             value="Other"
             checked={formData.creditTypePreference.includes("Other")}
             onChange={handleChange}
-          
-          className="mr-2"/>
+            className="mr-2"
+          />
           Other:
         </label>
         {formData.creditTypePreference.includes("Other") && (
@@ -253,7 +260,6 @@ const PurchaseMotivationForm = () => {
           value={formData.referralSource}
           onChange={handleChange}
           className="w-full p-2 border rounded"
-
         />
       </label>
 
@@ -265,7 +271,6 @@ const PurchaseMotivationForm = () => {
           value={formData.platformAccessRequirements}
           onChange={handleChange}
           className="w-full p-2 border rounded"
-
         />
       </label>
 

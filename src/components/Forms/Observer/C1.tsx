@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 interface FormData {
+  category: string;
+  subCategory: string;
   potentialFutureEngagement: string;
   otherPotentialFutureEngagement: string;
   institutionName: string;
@@ -26,6 +28,8 @@ interface FormData {
 
 const AcademicResearchObserverForm = () => {
   const [formData, setFormData] = useState<FormData>({
+    category: "Observer",
+    subCategory: "C1",
     potentialFutureEngagement: "",
     otherPotentialFutureEngagement: "",
     otherPreferredInfoAccess: "",
@@ -70,6 +74,8 @@ const AcademicResearchObserverForm = () => {
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Observer",
+        subCategory: "C1",
         potentialFutureEngagement: "",
         otherPotentialFutureEngagement: "",
         otherPreferredInfoAccess: "",

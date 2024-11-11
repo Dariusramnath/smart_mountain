@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 interface FormData {
+  category: string;
+  subCategory: string;
   organizationType: string;
   servicesOffered: string;
   otherServicesOffered?: string;
@@ -15,6 +17,8 @@ interface FormData {
 
 const ConservationServiceProviderForm = () => {
   const [formData, setFormData] = useState<FormData>({
+    category: "Potential Customer",
+    subCategory: "B4",
     organizationType: "",
     servicesOffered: "",
     technicalCapabilities: "",
@@ -49,6 +53,8 @@ const ConservationServiceProviderForm = () => {
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Potential Customer",
+        subCategory: "B4",
         organizationType: "",
         servicesOffered: "",
         technicalCapabilities: "",

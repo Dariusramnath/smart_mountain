@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 interface FormData {
+  category: string;
+  subCategory: string;
   registrationDate: string;
   referralSource: string;
   platformAccessRequirements: string;
@@ -14,6 +16,8 @@ interface FormData {
 
 const DevelopmentOrganizationRegistrationForm = () => {
   const [formData, setFormData] = useState<FormData>({
+    category: "Potential Customer",
+    subCategory: "B9",
     organizationType: "",
     developmentFocus: "",
     projectTypes: "",
@@ -51,6 +55,8 @@ const DevelopmentOrganizationRegistrationForm = () => {
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Potential Customer",
+        subCategory: "B9",
         organizationType: "",
         developmentFocus: "",
         projectTypes: "",

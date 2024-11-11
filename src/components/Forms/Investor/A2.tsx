@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 interface A2FormData {
+  category: string;
+  subCategory: string;
   familyOfficeName: string;
   contactPerson: string;
   position: string;
@@ -19,6 +21,8 @@ interface A2FormData {
 
 const A2 = () => {
   const [formData, setFormData] = useState<A2FormData>({
+    category: "Investor",
+    subCategory: "A2",
     familyOfficeName: "",
     contactPerson: "",
     position: "",
@@ -63,6 +67,8 @@ const A2 = () => {
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Investor",
+        subCategory: "A2",
         familyOfficeName: "",
         contactPerson: "",
         position: "",

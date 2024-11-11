@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 interface FormData {
+  category: string;
+  subCategory: string;
   registrationDate: string;
   referralSource: string;
   platformAccessRequirements: string;
@@ -14,6 +16,8 @@ interface FormData {
 
 const FinancialMarketInfrastructureProviderForm = () => {
   const [formData, setFormData] = useState<FormData>({
+    category: "Potential Customer",
+    subCategory: "B11",
     organizationType: "",
     services: "",
     technicalCapabilities: "",
@@ -40,20 +44,19 @@ const FinancialMarketInfrastructureProviderForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch(
-      "/api/submitForm",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
+    const response = await fetch("/api/submitForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Potential Customer",
+    subCategory: "B11",
         organizationType: "",
         services: "",
         technicalCapabilities: "",

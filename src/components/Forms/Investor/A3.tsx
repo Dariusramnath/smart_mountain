@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 interface A3FormData {
+  category: string;
+  subCategory: string;
   fundName: string;
   primaryContact: string;
   position: string;
@@ -20,6 +22,8 @@ interface A3FormData {
 
 const A3 = () => {
   const [formData, setFormData] = useState<A3FormData>({
+    category: "Investor",
+    subCategory: "A3",
     fundName: "",
     primaryContact: "",
     position: "",
@@ -65,6 +69,8 @@ const A3 = () => {
     if (response.ok) {
       alert("Form submitted successfully!");
       setFormData({
+        category: "Investor",
+        subCategory: "A3",
         fundName: "",
         primaryContact: "",
         position: "",
