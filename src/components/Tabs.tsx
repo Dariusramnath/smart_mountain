@@ -1,6 +1,21 @@
 import { useState, useRef, useEffect } from "react";
 import { A1, A2, A3, A4, A5 } from "./Forms/Investor";
-import { B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13 } from "./Forms/Customer";
+import {
+  B1,
+  B2,
+  B3,
+  B4,
+  B5,
+  B6,
+  B7,
+  B8,
+  B9,
+  B10,
+  B11,
+  B12,
+  B13,
+} from "./Forms/Customer";
+import { C1, C2, C3, C4, C5 } from "./Forms/Observer";
 
 interface TabContentProps {
   activeTab: "investor" | "potentialCustomer" | "observer";
@@ -43,90 +58,126 @@ const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
       default:
         return null;
     }
-  } 
+  }
   if (activeTab === "potentialCustomer") {
     switch (subOption) {
-        case "option1":
-          return (
-            <div>
-              <B1 />
-            </div>
-          );
-        case "option2":
-          return (
-            <div>
-              <B2 />
-            </div>
-          );
-        case "option3":
-          return (
-            <div>
-              <B3 />
-            </div>
-          );
-        case "option4":
-          return (
-            <div>
-              <B4 />
-            </div>
-          );
-        case "option5":
-          return (
-            <div>
-              <B5 />
-            </div>
-          );
-        case "option6":
-          return (
-            <div>
-              <B6 />
-            </div>
-          );
-        case "option7":
-          return (
-            <div>
-              <B7 />
-            </div>
-          );
-        case "option8":
-          return (
-            <div>
-              <B8 />
-            </div>
-          );
-        case "option9":
-          return (
-            <div>
-              <B9 />
-            </div>
-          );
-        case "option10":
-          return (
-            <div>
-              <B10 />
-            </div>
-          );
-        case "option11":
-          return (
-            <div>
-              <B11 />
-            </div>
-          );
-        case "option12":
-          return (
-            <div>
-              <B12 />
-            </div>
-          );
-        case "option13":
-          return (
-            <div>
-              <B13 />
-            </div>
-          );
-        default:
-          return null;
-      }
+      case "option1":
+        return (
+          <div>
+            <B1 />
+          </div>
+        );
+      case "option2":
+        return (
+          <div>
+            <B2 />
+          </div>
+        );
+      case "option3":
+        return (
+          <div>
+            <B3 />
+          </div>
+        );
+      case "option4":
+        return (
+          <div>
+            <B4 />
+          </div>
+        );
+      case "option5":
+        return (
+          <div>
+            <B5 />
+          </div>
+        );
+      case "option6":
+        return (
+          <div>
+            <B6 />
+          </div>
+        );
+      case "option7":
+        return (
+          <div>
+            <B7 />
+          </div>
+        );
+      case "option8":
+        return (
+          <div>
+            <B8 />
+          </div>
+        );
+      case "option9":
+        return (
+          <div>
+            <B9 />
+          </div>
+        );
+      case "option10":
+        return (
+          <div>
+            <B10 />
+          </div>
+        );
+      case "option11":
+        return (
+          <div>
+            <B11 />
+          </div>
+        );
+      case "option12":
+        return (
+          <div>
+            <B12 />
+          </div>
+        );
+      case "option13":
+        return (
+          <div>
+            <B13 />
+          </div>
+        );
+      default:
+        return null;
+    }
+  }
+  if (activeTab === "observer") {
+    switch (subOption) {
+      case "option1":
+        return (
+          <div>
+            <C1 />
+          </div>
+        );
+      case "option2":
+        return (
+          <div>
+            <C2 />
+          </div>
+        );
+      case "option3":
+        return (
+          <div>
+            <C3 />
+          </div>
+        );
+      case "option4":
+        return (
+          <div>
+            <C4 />
+          </div>
+        );
+      case "option5":
+        return (
+          <div>
+            <C5 />
+          </div>
+        );
+      default:
+        return null;
+    }
   }
 
   return null;
@@ -231,24 +282,55 @@ const DropdownTabs: React.FC = () => {
               {activeTab === "potentialCustomer" && (
                 <>
                   <option value="option1">B1. FINANCIER REGISTRATION</option>
-                  <option value="option2">B2. ENVIRONMENTAL CREDITS PURCHASER REGISTRATION</option>
-                  <option value="option3">B3. GOVERNMENT AGENCY REGISTRATION</option>
-                  <option value="option4">B4. CONSERVATION SERVICE PROVIDER REGISTRATION</option>
-                  <option value="option5">B5. COMMUNITY STAKEHOLDER REGISTRATION</option>
+                  <option value="option2">
+                    B2. ENVIRONMENTAL CREDITS PURCHASER REGISTRATION
+                  </option>
+                  <option value="option3">
+                    B3. GOVERNMENT AGENCY REGISTRATION
+                  </option>
+                  <option value="option4">
+                    B4. CONSERVATION SERVICE PROVIDER REGISTRATION
+                  </option>
+                  <option value="option5">
+                    B5. COMMUNITY STAKEHOLDER REGISTRATION
+                  </option>
                   <option value="option6">B6. LANDOWNER REGISTRATION</option>
-                  <option value="option7">B7. DATA/ANALYTICS USER REGISTRATION</option>
-                  <option value="option8">B8. INSURANCE COMPANY REGISTRATION</option>
-                  <option value="option9">B9. DEVELOPMENT ORGANIZATION REGISTRATION</option>
-                  <option value="option10">B10. CORPORATE ESG DEPARTMENT REGISTRATION</option>
-                  <option value="option11">B11. FINANCIAL MARKET INFRASTRUCTURE PROVIDER REGISTRATION</option>
-                  <option value="option12">B12. TOURISM INDUSTRY REGISTRATION</option>
-                  <option value="option13">B13. OTHER STAKEHOLDER REGISTRATION</option>
+                  <option value="option7">
+                    B7. DATA/ANALYTICS USER REGISTRATION
+                  </option>
+                  <option value="option8">
+                    B8. INSURANCE COMPANY REGISTRATION
+                  </option>
+                  <option value="option9">
+                    B9. DEVELOPMENT ORGANIZATION REGISTRATION
+                  </option>
+                  <option value="option10">
+                    B10. CORPORATE ESG DEPARTMENT REGISTRATION
+                  </option>
+                  <option value="option11">
+                    B11. FINANCIAL MARKET INFRASTRUCTURE PROVIDER REGISTRATION
+                  </option>
+                  <option value="option12">
+                    B12. TOURISM INDUSTRY REGISTRATION
+                  </option>
+                  <option value="option13">
+                    B13. OTHER STAKEHOLDER REGISTRATION
+                  </option>
                 </>
               )}
               {activeTab === "observer" && (
                 <>
-                  <option value="option1">Observer Option 1</option>
-                  <option value="option2">Observer Option 2</option>
+                  <option value="option1">
+                    C1. ACADEMIC/RESEARCH OBSERVER
+                  </option>
+                  <option value="option2">
+                    C2. POLICY/REGULATORY OBSERVER
+                  </option>
+                  <option value="option3">C3. INDUSTRY OBSERVER</option>
+                  <option value="option4">C4. MEDIA OBSERVER</option>
+                  <option value="option5">
+                    C5. INTERNATIONAL ORGANIZATION OBSERVER
+                  </option>
                 </>
               )}
             </select>
