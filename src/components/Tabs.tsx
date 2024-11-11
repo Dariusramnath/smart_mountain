@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { A1, A2, A3, A4 } from "./Forms/Investor";
-
+import { A1, A2, A3, A4, A5 } from "./Forms/Investor";
 
 interface TabContentProps {
   activeTab: "investor" | "potentialCustomer" | "observer";
@@ -31,14 +30,13 @@ const TabContent: React.FC<TabContentProps> = ({ activeTab, subOption }) => {
       case "option4":
         return (
           <div>
-            <A4/>
+            <A4 />
           </div>
         );
       case "option5":
         return (
           <div>
-            <h3>A5. OTHER INVESTOR REGISTRATION</h3>
-            {/* Insert relevant form or content for Other Investor Registration */}
+            <A5 />
           </div>
         );
       default:
@@ -62,13 +60,21 @@ const DropdownTabs: React.FC = () => {
   const contentRef = useRef<HTMLDivElement | null>(null);
 
   const handleMainChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newTab = e.target.value as "investor" | "potentialCustomer" | "observer";
+    const newTab = e.target.value as
+      | "investor"
+      | "potentialCustomer"
+      | "observer";
     setActiveTab(newTab);
     setSubOption(""); // Reset sub-option when main category changes
   };
 
   const handleSubOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newSubOption = e.target.value as "option1" | "option2" | "option3" | "option4" | "option5";
+    const newSubOption = e.target.value as
+      | "option1"
+      | "option2"
+      | "option3"
+      | "option4"
+      | "option5";
     setSubOption(newSubOption);
 
     // Scroll to the content after selecting the sub-option
@@ -80,7 +86,10 @@ const DropdownTabs: React.FC = () => {
   // Scroll to the sub-options dropdown after activeTab changes
   useEffect(() => {
     if (activeTab && subOptionRef.current) {
-      subOptionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      subOptionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }, [activeTab]); // This effect runs when activeTab changes
 
@@ -120,14 +129,18 @@ const DropdownTabs: React.FC = () => {
                   <option value="option1">
                     A1. VENTURE CAPITAL/PRIVATE EQUITY REGISTRATION
                   </option>
-                  <option value="option2">A2. FAMILY OFFICE REGISTRATION</option>
+                  <option value="option2">
+                    A2. FAMILY OFFICE REGISTRATION
+                  </option>
                   <option value="option3">
                     A3. IMPACT INVESTMENT FUND REGISTRATION
                   </option>
                   <option value="option4">
                     A4. CORPORATE INVESTMENT ARM REGISTRATION
                   </option>
-                  <option value="option5">A5. OTHER INVESTOR REGISTRATION</option>
+                  <option value="option5">
+                    A5. OTHER INVESTOR REGISTRATION
+                  </option>
                 </>
               )}
               {activeTab === "potentialCustomer" && (
@@ -151,8 +164,17 @@ const DropdownTabs: React.FC = () => {
       <div ref={contentRef} className="mt-4">
         {activeTab && (
           <TabContent
-            activeTab={activeTab as "investor" | "potentialCustomer" | "observer"}
-            subOption={subOption as "option1" | "option2" | "option3" | "option4" | "option5"}
+            activeTab={
+              activeTab as "investor" | "potentialCustomer" | "observer"
+            }
+            subOption={
+              subOption as
+                | "option1"
+                | "option2"
+                | "option3"
+                | "option4"
+                | "option5"
+            }
           />
         )}
       </div>
