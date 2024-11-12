@@ -4,15 +4,15 @@ import Tabs from "@/components/Tabs";
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-row justify-evenly border-b border-gray-400">
+      <div className="flex flex-row lg:justify-evenly border-b border-gray-400">
         <div
-          className="relative flex flex-col justify-evenly align-center items-center h-96 bg-cover bg-center text-white w-full"
+          className="flex flex-col lg:justify-evenly pt-14 lg:pt-0 pl-2 w-full bg-no-repeat items-center lg:h-96 h-3/4 bg-cover lg:bg-cover lg:bg-center text-white w-full"
           style={{ backgroundImage: "url('/smart-mountain-bg.png')" }}
         >
-          <h1 className="text-4xl flex font-bold justify-center max-w-[700px]">
+          <h1 className="text-4xl px-6 lg:px-0 flex font-bold justify-center max-w-[700px] pb-14 lg:pb-0">
             Smart Mountain: Pioneering Climate Finance Innovation
           </h1>
-          <p className=" max-w-[700px] mx-auto text-2xl">
+          <p className=" max-w-[700px] mx-auto lg:text-2xl text-xl px-6 lg:px-0 pb-6 lg:pb-0">
             At Smart Mountain, we&apos;re on a mission to revolutionize how we value
             and finance nature-based solutions to climate change. We focus on
             mangrove ecosystems, which play a critical role in carbon
@@ -21,14 +21,14 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center pt-4">
-        <div className="flex flex-col w-4/6 shadow-lg">
+      <div className="flex items-center justify-center pt-4 ">
+        <div className="flex flex-col lg:w-4/6 w-full px-3 shadow-lg">
           <img
             src="/smart-mountain-bg.png"
             alt="smart mountain header"
             className="w-full h-72 object-cover object-center rounded-t-lg"
           />
-          <div className="px-14 pt-8">
+          <div className="lg:px-14 px-2 pt-8">
             <h1 className="text-4xl font-bold">The Challenge</h1>
             <p className="pt-3 text-lg">
               Despite their immense value, mangrove restoration projects
