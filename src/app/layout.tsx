@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-        <title>Modern Web3 Starter</title>
+        <link rel="icon" type="image/svg+xml" href="/logo.jpeg"/>
+        <title>Smart Mountain</title>
         <meta
           name="description"
-          content="A starter kit for using the latest tools for building your dApps frontends"
+          content="Smart mountain form website"
         />
       </head>
       <body
