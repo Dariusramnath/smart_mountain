@@ -257,12 +257,12 @@ const DropdownTabs: React.FC = () => {
             <select
               value={subOption}
               onChange={handleSubOptionChange}
-              className="ml-2"
+              className=" lg:text-base text-sm w-3/4"
             >
-              <option value="">Choose...</option>
+              <option value="" className="text-sm">Choose...</option>
               {activeTab === "investor" && (
                 <>
-                  <option value="option1">
+                  <option value="option1" >
                     A1. VENTURE CAPITAL/PRIVATE EQUITY REGISTRATION
                   </option>
                   <option value="option2">
