@@ -162,7 +162,7 @@ export default function Home() {
                 />
               </div>
               <div
-                className={`pt-3 text-lg transition-all duration-300 ease-in-out overflow-hidden ${
+                className={`mt-3 text-lg transition-all duration-300 ease-in-out overflow-hidden ${
                   isProgressExpanded
                     ? "max-h-[300px] overflow-y-auto opacity-100"
                     : "max-h-0 opacity-0"
