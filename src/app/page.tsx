@@ -37,7 +37,10 @@ export default function Home() {
             alt="smart mountain header"
             className="w-full h-72 object-cover object-center rounded-t-lg"
           />
+
           <div className="lg:px-14 px-2 pt-8">
+            
+            <div className="mb-6"><Tabs /></div>
             <div
               className="p-4 border border-gray-300 shadow-md rounded-lg transition-all duration-300 ease-in-out cursor-pointer hover:shadow-lg"
               onClick={toggleExpand}
@@ -214,7 +217,8 @@ export default function Home() {
                 hand in hand. Contact us to learn more about how you can be part
                 of this groundbreaking initiative in climate finance innovation.
               </p>
-              <Tabs />
+              <div className="mt-4"><Tabs /></div>
+              
             </div>
           </div>
         </div>

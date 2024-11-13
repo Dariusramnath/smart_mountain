@@ -70,7 +70,7 @@ const OtherStakeholderRegistrationForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow"
+      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow text-black"
     >
       <label className="block font-semibold mb-3">
         Organization Type:

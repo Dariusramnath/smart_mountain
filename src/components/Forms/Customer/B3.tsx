@@ -77,7 +77,7 @@ const EnvironmentalCreditsPurchaserForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow"
+      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow text-black"
     >
       <div className="flex flex-col">
         <label htmlFor="organizationType" className="font-semibold block mb-3">

@@ -58,7 +58,7 @@ const CorporateEsdDepartmentRegistrationForm = () => {
       alert("Form submitted successfully!");
       setFormData({
         category: "Potential Customer",
-    subCategory: "B10",
+        subCategory: "B10",
         companyName: "",
         industry: "",
         esgPriorities: "",
@@ -78,7 +78,7 @@ const CorporateEsdDepartmentRegistrationForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow"
+      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow text-black"
     >
       <label className="block font-semibold mb-3">
         Company Name:

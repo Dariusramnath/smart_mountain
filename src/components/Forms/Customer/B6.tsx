@@ -58,7 +58,7 @@ const LandownerRegistrationForm = () => {
       alert("Form submitted successfully!");
       setFormData({
         category: "Potential Customer",
-    subCategory: "B6",
+        subCategory: "B6",
         ownerType: "",
         location: "",
         size: "",
@@ -78,7 +78,7 @@ const LandownerRegistrationForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow"
+      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow text-black"
     >
       <div className="block mt-2">
         <label className="block font-semibold mb-3">Owner Type:</label>

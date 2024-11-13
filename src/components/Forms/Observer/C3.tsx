@@ -73,7 +73,7 @@ const IndustryObserverForm = () => {
       alert("Form submitted successfully!");
       setFormData({
         category: "Observer",
-    subCategory: "C3",
+        subCategory: "C3",
         potentialFutureEngagement: "",
         otherPotentialFutureEngagement: "",
         otherPreferredInfoAccess: "",
@@ -103,7 +103,7 @@ const IndustryObserverForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow"
+      className="flex flex-col p-4 w-full mx-auto bg-white rounded shadow text-black"
     >
       <label className="block font-semibold mb-3">
         Company/Organization:

@@ -237,11 +237,11 @@ const DropdownTabs: React.FC = () => {
   }, [subOption]); // This effect runs when subOption changes
 
   return (
-    <div className="pt-4">
+    <div className="pt-6 px-8 pb-8 border-2 border-red-500 text-black rounded-xl w-full mx-auto">
       {/* Main Category Dropdown */}
-      <label className="font-bold">
+      <label className="lg:text-xl font-bold">
         Join Here:
-        <select value={activeTab} onChange={handleMainChange} className="ml-2">
+        <select value={activeTab} onChange={handleMainChange} className="ml-2 text-black">
           <option value="">Choose...</option>
           <option value="investor">Investor</option>
           <option value="potentialCustomer">Potential Customer</option>
@@ -257,7 +257,7 @@ const DropdownTabs: React.FC = () => {
             <select
               value={subOption}
               onChange={handleSubOptionChange}
-              className=" lg:text-base text-sm w-3/4"
+              className=" lg:text-base text-sm w-3/4 text-black"
             >
               <option value="" className="text-sm">Choose...</option>
               {activeTab === "investor" && (

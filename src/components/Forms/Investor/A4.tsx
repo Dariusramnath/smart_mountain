@@ -143,7 +143,7 @@ const A4Form: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-4 w-full mx-auto bg-white rounded shadow"
+      className="p-4 w-full mx-auto bg-white rounded shadow text-black"
     >
       <h2 className="text-2xl font-bold mb-4">
         Corporate Investment Arm Registration
