@@ -32,6 +32,7 @@ export default function Home() {
       </div>
       <div className="flex items-center justify-center pt-4 ">
         <div className="flex flex-col lg:w-4/6 w-full px-3 shadow-lg">
+        <div className="mb-6"><Tabs /></div>
           <img
             src="/smart-mountain-bg.png"
             alt="smart mountain header"
@@ -40,7 +41,7 @@ export default function Home() {
 
           <div className="lg:px-14 px-2 pt-8">
             
-            <div className="mb-6"><Tabs /></div>
+            
             <div
               className="p-4 border border-gray-300 shadow-md rounded-lg transition-all duration-300 ease-in-out cursor-pointer hover:shadow-lg"
               onClick={toggleExpand}
