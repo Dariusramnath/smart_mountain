@@ -237,7 +237,7 @@ const DropdownTabs: React.FC = () => {
   }, [subOption]); // This effect runs when subOption changes
 
   return (
-    <div className="pt-6 px-8 pb-8 border-2 border-red-500 text-black rounded-xl w-full mx-auto">
+    <div className="pt-6 px-8 pb-8 border-4 border-red-500 text-black rounded-xl w-full mx-auto">
       {/* Main Category Dropdown */}
       <label className="lg:text-xl font-bold">
         Join Here:

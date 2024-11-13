@@ -284,7 +284,12 @@ const PurchaseMotivationForm = () => {
         />
       </label>
 
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-700 active:bg-blue-400"
+      >
+        Submit
+      </button>
     </form>
   );
 };
